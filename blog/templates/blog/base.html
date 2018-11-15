@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="page-header">
-            {% if user.is_authenticatd %} <!-- login을 했을 때만 new 버튼을 보여주겠다 -->
+            {% if user.is_authenticated %} <!-- login을 했을 때만 new 버튼을 보여주겠다 -->
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
