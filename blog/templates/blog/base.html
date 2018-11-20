@@ -12,7 +12,12 @@
         <div class="page-header">
             {% if user.is_authenticated %} <!-- login을 했을 때만 new 버튼을 보여주겠다 -->
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+            {% else %}
+                <a href="{% url 'login' %}?next={{ request.path }}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
+
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
